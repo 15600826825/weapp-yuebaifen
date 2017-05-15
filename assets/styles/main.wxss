@@ -11,7 +11,7 @@ page{
 	-webkit-tap-highlight-color: transparent;
 }
 
-.page__hd {
+/*.page__hd {
     padding: 40px;
 }
 
@@ -48,12 +48,42 @@ page{
     text-align: center;
 }
 
-.text-center {
-    text-align: center;
-}
-
 .ezpop {
     position: relative;
     z-index: 1010;
     margin-bottom: 50px;
+}*/
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right
+}
+
+button[type="primary"] {
+    color: #00b4e7;
+    background: #fff;
+}
+
+button:hover[type="primary"] {
+    color: #00b4e7;
+    background: #f9f9f9;
+}
+
+.input-placeholder {
+    color: #f0f0f0;
 }

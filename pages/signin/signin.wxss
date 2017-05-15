@@ -1,0 +1,60 @@
+.page {
+    display: flex;
+	  min-height: 100vh;
+	  flex-direction: column;
+	  height: 100%;
+    overflow: hidden;
+    background-image: url(http://www.yueshijue.com/wechat/signinbg.png);
+    background-size: cover;
+    padding: 30rpx;
+    color: #fff;
+}
+.page-bd {
+	padding-top: 80rpx;
+	flex: 1;
+}
+.weui-cells {
+	margin-top: 0;
+	background: transparent;
+}
+.weui-cells::before {
+	border-top: none
+}
+.weui-cells::after {
+	bottom: 15rpx;
+}
+.submit-button {
+	padding-top: 60rpx;
+}
+.signup-link {
+	position: absolute;
+	right: 20rpx;
+	padding: 10rpx;
+}
+.logo {
+	width: 320rpx;
+	height: 320rpx;
+}
+.weui-label {
+	width: 80rpx;
+}
+.icon {
+	position: relative;
+	right: 5px;
+	width: 40rpx;
+	height: 40rpx;
+	vertical-align: middle;
+}
+/*.page-fd {
+	position: absolute;
+	bottom: 30rpx;
+	width: 100%;
+}*/
+.form-link {
+	width: 214px;
+	margin: auto;
+  font-size: 14px;
+}
+.form-link navigator {
+	display: inline-block;
+}

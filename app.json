@@ -1,13 +1,14 @@
 {
   "pages": [
+    "pages/signin/signin",
     "pages/index/index"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f4f4f4",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00ade7",
     "navigationBarTitleText": "悦百分",
-    "backgroundColor": "#f8f8f8",
-    "backgroundTextStyle": "dark"
+    "navigationBarTextStyle": "white"
   },
   "debug": true
 }
