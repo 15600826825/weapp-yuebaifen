@@ -87,3 +87,8 @@ button:hover[type="primary"] {
 .input-placeholder {
     color: #f0f0f0;
 }
+
+.navigator-hover {
+    background-color: transparent;
+    opacity: 1
+}
