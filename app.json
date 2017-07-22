@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/signup/signup",
     "pages/signin/signin",
     "pages/index/index"
   ],
@@ -8,7 +9,12 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#00ade7",
     "navigationBarTitleText": "悦百分",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
   },
   "debug": true
 }

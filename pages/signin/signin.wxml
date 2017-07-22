@@ -1,31 +1,21 @@
+<import src="../../components/toptips/toptips.wxml"/>
+<template is="toptips" data="{{ ...$wux.toptips }}"/>
 <view class="page">
     <view class="page-hd text-center">
-        <navigator url="../index/index" class="signup-link">注册</navigator> 
+        <navigator url="../signup/signup" class="signup-link">注册</navigator> 
         <image src="http://www.yueshijue.com/wechat/signin1.png" class="logo"></image>
     </view>
     <view class="page-bd">
       <form bindsubmit="submitForm">
-		    <view class="weui-cells">
-		        <view class="weui-cell weui-cell_input">
-		            <view class="weui-cell__hd">
-		                <view class="weui-label">
-		                	<image src="http://www.yueshijue.com/wechat/signinphone.png" class="icon"></image>
-		                </view>
-		            </view>
-		            <view class="weui-cell__bd">
-		                <input name="tel" value="{{ form.tel }}" class="weui-input" type="number" placeholder="请输入手机号"/>
-		            </view>
-		        </view>
-		        <view class="weui-cell weui-cell_input">
-		            <view class="weui-cell__hd">
-		                <view class="weui-label">
-		                	<image src="http://www.yueshijue.com/wechat/signinpwd.png" class="icon"></image>
-		                </view>
-		            </view>
-		            <view class="weui-cell__bd">
-		                <input name="idcard" value="{{ form.idcard }}" class="weui-input" type="idcard" placeholder="请输入密码" />
-		            </view>
-		        </view>
+		    <view class="form-item">
+		    	<image src="http://www.yueshijue.com/wechat/signinphone.png" class="form-item-icon"></image>
+		    	<input name="tel" value="{{ form.tel }}" class="form-item-input" type="tel" placeholder="请输入手机号" bindblur="telChange"/>
+		    	<icon wx:if="{{ form.tel }}" type="clear" size="18" color="rgba(255,255,255,.5)" bindtap="clearTel"></icon>
+		    </view>
+		    <view class="form-item">
+		    	<image src="http://www.yueshijue.com/wechat/signinpwd.png" class="form-item-icon"></image>
+		    	<input name="password" value="{{ form.password }}" class="form-item-input" type="password" placeholder="请输入密码" bindblur="passChange"/>
+		    	<icon wx:if="{{ form.password }}" type="clear" size="18" color="rgba(255,255,255,.5)" bindtap="clearPass"></icon>
 		    </view>
 		    <view class="submit-button">
 		        <button class="weui-btn" type="primary" formType="submit">提交</button>

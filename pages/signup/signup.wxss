@@ -1,0 +1,42 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  color: #666;
+  font-size: 28rpx;
+}
+.form-group {
+	padding: 0 30rpx;
+	margin-bottom: 20rpx;
+	background: #fff
+}
+.form-item {
+	display: flex;
+	flex-direction: row;
+	padding: 20rpx 10rpx 10rpx;
+	border-bottom: 1px solid #f0f0f0;
+	vertical-align: middle;
+}
+.form-item:last-child {
+	border-bottom: 0;
+}
+.form-item-label {
+	width: 180rpx;
+	line-height: 2
+}
+.form-item-input {
+	flex: 1;
+}
+.random-img {
+	width: 160rpx;
+	height: 60rpx;
+	vertical-align: middle
+}
+.submit-button button{
+	padding-top: 10rpx;
+  color: #fff;
+  font-size: 32rpx;
+	background: #3397dd;
+}
