@@ -6,55 +6,57 @@
     	<view class="form-group">
       	<view class="form-item">
 		    	<label class="form-item-label">手机号：</label>
-		    	<input name="mobile" value="{{ form.mobile }}" class="form-item-input" type="tel" placeholder="请输入手机号" bindblur="telChange"/>
-		    	<icon wx:if="{{ form.mobile }}" type="clear" size="18" color="rgba(0,0,0,.5)"  bindtap="clearTel"></icon>
+		    	<input name="mobile" value="{{ form.mobile }}" class="form-item-input" type="tel" placeholder="请输入手机号" bindinput="telChange"/>
+		    	<icon wx:if="{{ form.mobile }}" type="clear" size="18" color="rgba(0,0,0,.3)"  bindtap="clearTel"></icon>
 		    </view>
 		    <view class="form-item">
 		    	<label class="form-item-label">图形验证码：</label>
-		    	<input name="inCode" value="{{ form.inCode }}" class="form-item-input" type="number" placeholder="请输入图形验证码" bindblur="inCodeChange"/>
+		    	<input name="inCode" value="{{ form.inCode }}" class="form-item-input" type="number" placeholder="请输入图形验证码" bindinput="inCodeChange"/>
+		    	<icon wx:if="{{ form.inCode }}" type="clear" size="18" color="rgba(0,0,0,.3)"  bindtap="clearInCode"></icon>
 		    	<image src="data:image/png;base64,{{ form.imgCodeUrl }}" class="random-img" bindtap="getRandomImage"></image>
 		    </view>
 		    <view class="form-item">
 		    	<label class="form-item-label">短信验证码：</label>
-		    	<input name="smsCode" value="{{ form.smsCode }}" class="form-item-input" type="number" placeholder="请输入短信验证码" bindblur="smsChange"/>
-		    	<button type="primary" size="mini" bindtap="getSmsCode">获取验证码</button>
+		    	<input name="smsCode" value="{{ form.smsCode }}" class="form-item-input" type="number" placeholder="请输入短信验证码" bindinput="smsChange"/>
+		    	<icon wx:if="{{ form.smsCode }}" type="clear" size="18" color="rgba(0,0,0,.3)"  bindtap="clearSmsCode"></icon>
+		    	<button type="primary" size="mini" disabled="{{ buttonStatus }}" bindtap="getSmsCode">{{ buttonText }}</button>
 		    </view>
     	</view>
     	<view class="form-group">
     		<view class="form-item">
 		    	<label class="form-item-label">姓名：</label>
-		    	<input name="name" value="{{ form.name }}" class="form-item-input" type="text" placeholder="请输入姓名" bindblur="nameChange"/>
-		    	<icon wx:if="{{ form.name }}" type="clear" size="18" color="rgba(0,0,0,.5)" bindtap="clearName"></icon>
+		    	<input name="name" value="{{ form.name }}" class="form-item-input" type="text" placeholder="请输入姓名" bindinput="nameChange"/>
+		    	<icon wx:if="{{ form.name }}" type="clear" size="18" color="rgba(0,0,0,.3)" bindtap="clearName"></icon>
 		    </view>
 		    <view class="form-item">
 		    	<label class="form-item-label">身份证号：</label>
-		    	<input name="cardNo" value="{{ form.cardNo }}" class="form-item-input" type="idcard" placeholder="请仔细填写 如号码有误将影响分期申请" bindblur="cardChange"/>
-		    	<icon wx:if="{{ form.cardNo }}" type="clear" size="18" color="rgba(0,0,0,.5)" bindtap="clearCard"></icon>
+		    	<input name="cardNo" value="{{ form.cardNo }}" class="form-item-input" type="idcard" placeholder="请仔细填写 如号码有误将影响分期申请" bindinput="cardChange"/>
+		    	<icon wx:if="{{ form.cardNo }}" type="clear" size="18" color="rgba(0,0,0,.3)" bindtap="clearCard"></icon>
 		    </view>
 		    <view class="form-item">
 		    	<label class="form-item-label">QQ：</label>
-		    	<input name="qq" value="{{ form.qq }}" class="form-item-input" type="number" placeholder="（选填）" bindblur="qqChange"/>
-		    	<icon wx:if="{{ form.qq }}" type="clear" size="18" color="rgba(0,0,0,.5)" bindtap="clearQQ"></icon>
+		    	<input name="qq" value="{{ form.qq }}" class="form-item-input" type="number" placeholder="（选填）" bindinput="qqChange"/>
+		    	<icon wx:if="{{ form.qq }}" type="clear" size="18" color="rgba(0,0,0,.3)" bindtap="clearQQ"></icon>
 		    </view>
 		    <view class="form-item">
 		    	<label class="form-item-label">邮箱：</label>
-		    	<input name="email" value="{{ form.email }}" class="form-item-input" type="text" placeholder="（选填）" bindblur="emailChange"/>
-		    	<icon wx:if="{{ form.email }}" type="clear" size="18" color="rgba(0,0,0,.5)" bindtap="clearEmail"></icon>
+		    	<input name="email" value="{{ form.email }}" class="form-item-input" type="text" placeholder="（选填）" bindinput="emailChange"/>
+		    	<icon wx:if="{{ form.email }}" type="clear" size="18" color="rgba(0,0,0,.3)" bindtap="clearEmail"></icon>
 		    </view>
 		    <view class="form-item">
 		    	<label class="form-item-label">设置密码：</label>
-		    	<input name="pass" value="{{ form.pass }}" class="form-item-input" type="text" placeholder="6-20位数字/字母" bindblur="passChange"/>
-		    	<icon wx:if="{{ form.pass }}" type="clear" size="18" color="rgba(0,0,0,.5)" bindtap="clearPass"></icon>
+		    	<input name="pass" value="{{ form.pass }}" class="form-item-input" type="text" placeholder="6-20位数字/字母" bindinput="passChange"/>
+		    	<icon wx:if="{{ form.pass }}" type="clear" size="18" color="rgba(0,0,0,.3)" bindtap="clearPass"></icon>
 		    </view>
     	</view>
     	<view style="padding: 0 30rpx">
-    		<view class="agree" style="font-size: 14px">
+    		<view class="agree">
           <checkbox-group name="agree">
-              <checkbox value="agree" checked="{{ form.agree }}"/>同意
-              <navigator url="../server/server" style="display: inline-block; color: #34c1ea;">《服务与隐私协议》</navigator>
+            <checkbox value="agree" checked="{{ form.agree }}"/>同意
+            <navigator url="../server/server">《服务与隐私协议》</navigator>
           </checkbox-group>
         </view>
-		    <view class="submit-button">
+		    <view class="form-item-submit">
 		      <button formType="submit">立即加入</button>
 		    </view>
     	</view>

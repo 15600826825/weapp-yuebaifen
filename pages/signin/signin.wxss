@@ -55,3 +55,12 @@
 .form-link navigator {
 	display: inline-block;
 }
+button[type="primary"] {
+    color: #00b4e7;
+    background: #fff;
+}
+
+button:hover[type="primary"] {
+    color: #00b4e7;
+    background: #f9f9f9;
+}

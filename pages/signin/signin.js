@@ -46,26 +46,37 @@ Page({
 			this.showToptips(error.msg)
 			return false
 		}
+    this.setData({
+      loading: true
+    })
 		App.request({
-			url: App.api.loginUrl,
+			url: App.api.requestLogin,
 			method: 'POST',
 			data: {
         mobile: params.tel,
         pass: App.Md5.hex_md5(params.password)
       },
-			success (res) {
-          let result = res.data.result;
-          let customerUser = result.customerUser;
-          let customerSessionId = result.customerSessionId;
-          wx.setStorage({key: 'user', data: customerUser})
-          wx.setStorage({key: 'sessionId', data: customerSessionId})
-          wx.showToast({
-            title: '登录成功',
-            icon: 'success',
-            duration: 1000
-          })
-          wx.redirectTo({url: '../home/home'})
+			success(res) {
+        that.setData({
+          loading: false
+        })
+        let result = res.data.result;
+        let customerUser = result.customerUser;
+        let customerSessionId = result.customerSessionId;
+        wx.setStorage({key: 'user', data: customerUser})
+        wx.setStorage({key: 'sessionId', data: customerSessionId})
+        wx.showToast({
+          title: '登录成功',
+          icon: 'success',
+          duration: 1000
+        })
+        wx.redirectTo({url: '../home/home'})
       },
+      other() {
+        that.setData({
+          loading: false
+        })
+      }
 		})
 		// wx.request({
   //     url: `${App.globalData.baseUrl}/user/loginByMobileAndPassword.json`,
@@ -138,5 +149,5 @@ Page({
 				rangelength: '密码在6-20位之间', 
 			},
 		})
-    },
+  },
 })

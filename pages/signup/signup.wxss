@@ -29,12 +29,22 @@
 .form-item-input {
 	flex: 1;
 }
+.form-item icon {
+	margin:5px;
+}
 .random-img {
 	width: 160rpx;
 	height: 60rpx;
 	vertical-align: middle
 }
-.submit-button button{
+.agree {
+	margin: 20rpx 0;
+}
+.agree navigator {
+	display: inline-block; 
+	color: #34c1ea;
+}
+.form-item-submit button{
 	padding-top: 10rpx;
   color: #fff;
   font-size: 32rpx;

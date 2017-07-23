@@ -1,10 +1,25 @@
-<view class="weui-cells__title">Components</view>
-<view class="weui-cells weui-cells_after-title">
-    <navigator wx:for="{{ components }}" wx:key="" url="{{ item.url }}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__hd">
-            <image src="{{ item.icon }}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-        </view>
-        <view class="weui-cell__bd">{{ item.title }}</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
+<import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<view class="page">
+	<view class="page-main">
+		<view class="page-hd">
+			<image class="user" src="../../images/user_small.png" bindtap="handleTap"></image>
+		</view>
+		<view class="page-bd">
+			<image class="logo" src="../../images/yue_logo.png" ></image>
+			<view class="text">
+	      <text>{{text1}}</text>|
+	      <text>{{text2}}</text>|
+	      <text>{{text3}}</text>
+	    </view>
+		</view>
+		<view class="page-ft">
+			<view class="scan-box" bindtap="scanCode">
+		    <image class="scan-icon" src="http://www.yueshijue.com/wechat/indexsao.png"></image>
+		    <text>扫码申请分期</text>
+		  </view>
+		</view>
+	</view>
+	<view class="aside">
+	</view>
 </view>

@@ -9,16 +9,16 @@
       <form bindsubmit="submitForm">
 		    <view class="form-item">
 		    	<image src="http://www.yueshijue.com/wechat/signinphone.png" class="form-item-icon"></image>
-		    	<input name="tel" value="{{ form.tel }}" class="form-item-input" type="tel" placeholder="请输入手机号" bindblur="telChange"/>
+		    	<input name="tel" value="{{ form.tel }}" class="form-item-input" type="tel" placeholder="请输入手机号" bindinput="telChange"/>
 		    	<icon wx:if="{{ form.tel }}" type="clear" size="18" color="rgba(255,255,255,.5)" bindtap="clearTel"></icon>
 		    </view>
 		    <view class="form-item">
 		    	<image src="http://www.yueshijue.com/wechat/signinpwd.png" class="form-item-icon"></image>
-		    	<input name="password" value="{{ form.password }}" class="form-item-input" type="password" placeholder="请输入密码" bindblur="passChange"/>
+		    	<input name="password" value="{{ form.password }}" class="form-item-input" type="password" placeholder="请输入密码" bindinput="passChange"/>
 		    	<icon wx:if="{{ form.password }}" type="clear" size="18" color="rgba(255,255,255,.5)" bindtap="clearPass"></icon>
 		    </view>
 		    <view class="submit-button">
-		        <button class="weui-btn" type="primary" formType="submit">提交</button>
+		        <button class="weui-btn" type="primary" formType="submit" loading="{{ loading }}">提交</button>
 		    </view>
 		  </form>
     </view>

@@ -13,7 +13,9 @@ Page({
       qq: '',
       email: '',
       agree: true
-		}
+		},
+		buttonText: '获取验证码',
+		buttonStatus: false
 	},
 	onLoad() {
 		this.initValidate()
@@ -73,6 +75,16 @@ Page({
       'form.mobile': ''
     })
   },
+  clearInCode(e) {
+    this.setData({
+      'form.inCode': ''
+    })
+  },
+  clearSmsCode(e) {
+    this.setData({
+      'form.smsCode': ''
+    })
+  },
   clearName(e) {
     this.setData({
       'form.name': ''
@@ -103,6 +115,7 @@ Page({
     App.request({
         url: App.api.getRandomImage,
         method: 'GET',
+        loading: false,
         success(res) {
           console.log(res.data)
           that.setData({
@@ -112,7 +125,29 @@ Page({
         },
     })
   },
+  countDown () {
+  	let count = 60;
+  	this.setData({
+			buttonStatus: true
+		})
+  	let timer = setInterval(() => {
+  		if (count > 0) {
+  			count--;
+  		} else {
+  			clearInterval(timer)
+  			this.setData({
+					buttonStatus: false,
+					buttonText: '重新发送'
+				})
+  			return;
+  		}
+  		this.setData({
+  			buttonText: `重新发送 ${count}s`
+  		})
+  	}, 1000)
+  },
   getSmsCode () {
+  	let that = this;
   	let form = {
   		detail: {
   			value: {
@@ -126,38 +161,58 @@ Page({
 			this.showToptips(error.msg)
 			return false
 		}
+		let data = {
+      mobile: this.data.form.mobile,
+      smsType: 1,
+      inCode: this.data.form.inCode,
+      imgSessionId: this.data.form.imgSessionId,
+		}
+		console.log(data)
+		App.request({
+			url: App.api.getMobileSmsCode,
+			method: 'POST',
+			data: data,
+			loading: false,
+			success(res) {
+				wx.showToast({
+					title: '验证码已发送，请注意查收'
+				})
+				that.countDown()
+			},
+			other() {
+				that.getRandomImage()
+			}
+		})
   },
   submitForm(e) {
   	let that = this;
-  	console.log(e)
 		const params = e.detail.value;
-		console.log(params)
 		if (!this.WxValidate.checkForm(e)) {
 			const error = this.WxValidate.errorList[0]
 			this.showToptips(error.msg)
 			return false
 		}
-		// App.request({
-		// 	url: App.api.loginUrl,
-		// 	method: 'POST',
-		// 	data: {
-  //       mobile: params.tel,
-  //       pass: App.Md5.hex_md5(params.password)
-  //     },
-		// 	success(res) {
-  //         let result = res.data.result;
-  //         let customerUser = result.customerUser;
-  //         let customerSessionId = result.customerSessionId;
-  //         wx.setStorage({key: 'user', data: customerUser})
-  //         wx.setStorage({key: 'sessionId', data: customerSessionId})
-  //         wx.showToast({
-  //           title: '登录成功',
-  //           icon: 'success',
-  //           duration: 1000
-  //         })
-  //         wx.redirectTo({url: '../home/home'})
-  //     },
-		// })
+		params.imgSessionId = this.data.form.imgSessionId;
+		params.pass = App.Md5.hex_md5(params.pass)
+		console.log(params)
+		App.request({
+			url: App.api.requestRegist,
+			method: 'POST',
+			data: params,
+			success(res) {
+          let result = res.data.result;
+          let customerUser = result.customerUser;
+          let customerSessionId = result.customerSessionId;
+          wx.setStorage({key: 'user', data: customerUser})
+          wx.setStorage({key: 'sessionId', data: customerSessionId})
+          wx.showToast({
+            title: '注册成功',
+            icon: 'success',
+            duration: 1000
+          })
+          wx.redirectTo({url: '../home/home'})
+      },
+		})
   },
   initValidate() {
     this.WxValidate = App.WxValidate({

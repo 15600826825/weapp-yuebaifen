@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/signup/signup",
+    "pages/index/index",
     "pages/signin/signin",
-    "pages/index/index"
+    "pages/signup/signup"
   ],
   "window": {
     "backgroundColor": "#f4f4f4",

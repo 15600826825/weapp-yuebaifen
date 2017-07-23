@@ -74,16 +74,6 @@ page{
     text-align: right
 }
 
-button[type="primary"] {
-    color: #00b4e7;
-    background: #fff;
-}
-
-button:hover[type="primary"] {
-    color: #00b4e7;
-    background: #f9f9f9;
-}
-
 .input-placeholder {
     color: #d1d1d1;
 }

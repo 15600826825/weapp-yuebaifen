@@ -15,7 +15,8 @@ App({
 		console.log('onHide')
 	},
 	request(config) {
-    wx.showLoading({
+    config.loading = config.loading === false ? false : true;
+    config.loading && wx.showLoading({
       title: '加载中',
     })
 		wx.request({
@@ -28,13 +29,17 @@ App({
       success(res) {
         wx.hideLoading()
       	if(res.data.code === 0) {
-      		console.log('操作成功')
       		config.success(res)
       	} else {
+          console.log(res)
       		wx.showToast({
             title: res.data.message,
-          	image: '../../assets/images/iconfont-toptips.png', 
+          	image: '../../assets/images/iconfont-toptips.png',
+            timer: 1000
           })
+          setTimeout(() => {
+            config.other && config.other()
+          }, 1000)
           // wx.redirectTo({url: '/pages/index/index'})
       	}
       },
@@ -53,8 +58,10 @@ App({
     version: '1.1.0',
   },
   api: {
-  	loginUrl: 'user/loginByMobileAndPassword.json',
+  	requestLogin: 'user/loginByMobileAndPassword.json',
     getRandomImage: 'user/getRandomImage.json',
+    getMobileSmsCode: 'sms/getMobileSmsCode.json',
+    requestRegist: 'user/registe.json',
   },
   Md5: Md5,
 	wux: wux, 
