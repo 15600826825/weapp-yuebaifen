@@ -1,0 +1,14 @@
+<import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<view class="page">
+		<image src="http://www.yueshijue.com/wechat/channel.png" class="channle-bg"></image>
+		<view class="channel-list">
+	    <view class="channel" wx:for="{{ mechanismInfoList }}" wx:key="{{ index }}" data-mechanismId="{{ item.mechanismId }}" data-lowestAmount="{{ item.lowestAmount }}" data-largestAmount="{{ item.amount }}" bindtap="selectedChannel">
+	        <image src="http://www.yueshijue.com/wechat/channelleft.png" class="icon"></image>
+	        <view class="channel-detail">
+	            <text class="channel-name">{{ item.mechanismNickName }}</text>
+	            <text class="channel-amount">分期金额：￥{{ item.lowestAmount }} - {{ item.amount }}</text>
+	        </view>
+	    </view>
+    </view>
+</view>

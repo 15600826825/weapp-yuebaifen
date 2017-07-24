@@ -1,13 +1,37 @@
 <import src="../../components/toast/toast.wxml"/>
 <template is="toast" data="{{ ...$wux.toast }}"/>
-<view class="page">
+<view class="page" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style="left: {{ leftValue }}">
+	<view class="aside">
+		<view class="user-info">
+	    <image src="../../images/avatar.png"></image>
+	    <text>{{ user.mobile }}</text>
+	  </view>
+	  <view class="user-link">
+	    <view class="account">
+	    <navigator url="../myaccount/myaccount">
+	      <image src="../../images/account.png"></image>
+	      <text>我的账户</text>
+	    </navigator>
+	    </view>
+	    <view class="problem">
+	      <navigator url="../commonproblem/commonproblem">
+	      <image src="../../images/problem.png"></image>
+	      <text>常见问题</text>
+	      </navigator>
+	    </view>
+	    <view class="exit" bindtap="logout">
+	      <image src="../../images/exit.png"></image>
+	      <text>退出登录</text>
+	    </view>
+	  </view>
+	</view>
 	<view class="page-main">
 		<view class="page-hd">
-			<image class="user" src="../../images/user_small.png" bindtap="handleTap"></image>
+			<image class="user" src="../../images/user.png" bindtap="handleTap"></image>
 		</view>
 		<view class="page-bd">
 			<image class="logo" src="../../images/yue_logo.png" ></image>
-			<view class="text">
+			<view class="text-info">
 	      <text>{{text1}}</text>|
 	      <text>{{text2}}</text>|
 	      <text>{{text3}}</text>
@@ -19,7 +43,5 @@
 		    <text>扫码申请分期</text>
 		  </view>
 		</view>
-	</view>
-	<view class="aside">
 	</view>
 </view>

@@ -9,7 +9,7 @@
       <form bindsubmit="submitForm">
 		    <view class="form-item">
 		    	<image src="http://www.yueshijue.com/wechat/signinphone.png" class="form-item-icon"></image>
-		    	<input name="tel" value="{{ form.tel }}" class="form-item-input" type="tel" placeholder="请输入手机号" bindinput="telChange"/>
+		    	<input name="tel" value="{{ form.tel }}" class="form-item-input" type="number" placeholder="请输入手机号" bindinput="telChange"/>
 		    	<icon wx:if="{{ form.tel }}" type="clear" size="18" color="rgba(255,255,255,.5)" bindtap="clearTel"></icon>
 		    </view>
 		    <view class="form-item">

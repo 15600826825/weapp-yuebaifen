@@ -3,7 +3,15 @@ Page({
 	data: {
 		text1: '额度更高',
 		text2: '零手续费',
-		text3: '审批更快'
+		text3: '审批更快',
+		startX: 0,
+		startTime: 0,
+		offsetX: 0,
+		user: {
+			mobile: 15210647536
+		},
+		toggle: true,
+		leftValue: 0
 	},
 	onLoad() {
 		this.$wuxToast = App.wux(this).$wuxToast
@@ -11,8 +19,37 @@ Page({
 		  withShareTicket: true
 		})
 	},
+	touchStart(e) {
+		this.setData({
+			startX: e.touches[0].clientX,
+			startTime: e.timeStamp
+		})
+	},
+	touchMove(e) {
+		let offsetX = e.touches[0].clientX - this.data.startX;
+		this.setData({
+			offsetX: offsetX
+		})
+	},
+	touchEnd(e) {
+		// console.log(e.timeStamp - this.data.startTime)
+		// console.log(this.data.offsetX)
+		let leftValue = 0;
+		if(e.timeStamp - this.data.startTime < 100) return;
+		if(this.data.offsetX > 50) {
+			leftValue = '550rpx'
+		} else if (this.data.offsetX < -50) {
+			leftValue = 0
+		}
+		this.setData({
+			leftValue: leftValue
+		})
+	},
 	handleTap() {
-		console.log('tap')
+		let leftValue = this.data.leftValue === 0 ? '550rpx' : 0;
+		this.setData({
+			leftValue: leftValue
+		})
 	},
 	scanCode() {
 		let that = this;
@@ -33,7 +70,7 @@ Page({
 			    	data: shopUuid
 			    })
 			    console.log(shopUuid)
-		    	// wx.navigateTo({url: '../stage/stage'})
+		    	wx.navigateTo({url: '../channel/channel'})
 		    } else {
 		    	that.$wuxToast.show({
             type: 'forbidden',
@@ -46,4 +83,4 @@ Page({
 		  }
 		})
 	},
-})
+}) 

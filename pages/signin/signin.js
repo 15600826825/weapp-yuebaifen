@@ -49,13 +49,14 @@ Page({
     this.setData({
       loading: true
     })
+    let data = {
+      mobile: params.tel,
+      pass: App.Md5.hex_md5(params.password)
+    }
 		App.request({
 			url: App.api.requestLogin,
 			method: 'POST',
-			data: {
-        mobile: params.tel,
-        pass: App.Md5.hex_md5(params.password)
-      },
+			data: data,
 			success(res) {
         that.setData({
           loading: false
@@ -66,11 +67,11 @@ Page({
         wx.setStorage({key: 'user', data: customerUser})
         wx.setStorage({key: 'sessionId', data: customerSessionId})
         wx.showToast({
-          title: '登录成功',
           icon: 'success',
+          title: '登录成功',
           duration: 1000
         })
-        wx.redirectTo({url: '../home/home'})
+        wx.redirectTo({url: '../index/index'})
       },
       other() {
         that.setData({
@@ -78,53 +79,6 @@ Page({
         })
       }
 		})
-		// wx.request({
-  //     url: `${App.globalData.baseUrl}/user/loginByMobileAndPassword.json`,
-  //     method: 'POST',
-  //     data: {
-  //       mobile: params.tel,
-  //       pass: App.Md5.hex_md5(params.password)
-  //     },
-  //     header: {
-  //       'content-type': 'application/x-www-form-urlencoded'
-  //     },
-  //     success: function(res) {
-  //       console.log(res)
-  //       App.$http()
-  //       App.interceptor(res)
-  //       if(res.data.code === 0) {
-  //         let result = res.data.result;
-  //         let customerUser = result.customerUser;
-  //         let customerSessionId = result.customerSessionId;
-  //         wx.setStorage({key: 'user', data: customerUser})
-  //         wx.setStorage({key: 'sessionId', data: customerSessionId})
-  //         wx.showToast({
-  //           title: '登录成功',
-  //           icon: 'success',
-  //           duration: 1000
-  //         })
-  //         wx.redirectTo({url: '../home/home'})
-  //       } else {
-  //         // that.showToast(res.data.message)
-  //         wx.showToast({
-  //           title: res.data.message,
-  //         	image: '../../assets/images/iconfont-toptips.png', 
-  //         })
-  //       }
-  //     },
-  //     fail: function(res) {
-  //       console.log('error')
-  //     }
-  //   })
-		// this.$wuxToast.show({
-		// 	type: 'success',
-		// 	hide: !0, 
-		// 	text: '提交成功', 
-		// })
-		// wx.navigateTo({
-		// 	url: '../index/index?id=123'
-		// })
-		// wx.showNavigationBarLoading()
 	},
 	onPullDownRefresh () {
     // wx.stopPullDownRefresh()

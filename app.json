@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/signin/signin",
+    "pages/channel/channel",
     "pages/signup/signup"
   ],
   "window": {

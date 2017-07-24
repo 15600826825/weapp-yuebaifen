@@ -12,7 +12,7 @@ App({
 		console.log('onShow')
 	},
 	onHide() {
-		console.log('onHide')
+		console.log('onHide')  
 	},
 	request(config) {
     config.loading = config.loading === false ? false : true;
@@ -28,7 +28,14 @@ App({
       },
       success(res) {
         wx.hideLoading()
-      	if(res.data.code === 0) {
+        if(res.data.code === 999) {
+          wx.showToast({
+            title: res.data.message,
+            image: '../../assets/images/iconfont-toptips.png',
+            timer: 1000
+          })
+          // wx.redirectTo({url: '/pages/signin/signin'})
+        } else if(res.data.code === 0) {
       		config.success(res)
       	} else {
           console.log(res)
@@ -49,9 +56,6 @@ App({
 			}
     })
 	},
-	interceptor(config) {
-		console.log(config)
-	},
 	globalData: {
     userInfo: null,
     baseUrl: 'https://www.yueshijue.com/ysj',
@@ -62,6 +66,7 @@ App({
     getRandomImage: 'user/getRandomImage.json',
     getMobileSmsCode: 'sms/getMobileSmsCode.json',
     requestRegist: 'user/registe.json',
+    getMechanismList: 'appShop/getShopMechanismInfoList.json'
   },
   Md5: Md5,
 	wux: wux, 
