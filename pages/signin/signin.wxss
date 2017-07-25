@@ -1,17 +1,17 @@
 .page {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
   height: 100%;
+  padding: 30rpx;
+  color: #fff;
   overflow: hidden;
   background-image: url(http://www.yueshijue.com/wechat/signinbg.png);
   background-size: cover;
-  padding: 30rpx;
-  color: #fff;
 }
 .page-bd {
 	padding-top: 80rpx;
-	/*flex: 1;*/
 }
 .form-item {
 	margin-bottom: 40rpx;

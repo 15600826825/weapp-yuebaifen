@@ -34,7 +34,7 @@ App({
             image: '../../assets/images/iconfont-toptips.png',
             timer: 1000
           })
-          // wx.redirectTo({url: '/pages/signin/signin'})
+          wx.redirectTo({url: '/pages/signin/signin'})
         } else if(res.data.code === 0) {
       		config.success(res)
       	} else {

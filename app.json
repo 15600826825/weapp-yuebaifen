@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/signin/signin",
+    "pages/myaccount/myaccount",
     "pages/channel/channel",
+    "pages/signin/signin",
+    "pages/index/index",
     "pages/signup/signup"
   ],
   "window": {
@@ -11,7 +12,7 @@
     "navigationBarBackgroundColor": "#00ade7",
     "navigationBarTitleText": "悦百分",
     "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "networkTimeout": {
     "request": 10000,

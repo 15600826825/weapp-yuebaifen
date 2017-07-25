@@ -1,0 +1,46 @@
+<import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<view class="page">
+    <view class="page-hd">
+        <image src="{{ avatar }}" class="avatar"></image>
+        <view class="account-info">
+            <text >{{ user.name }}</text>
+            <text>{{ user.mobile }}</text>
+        </view>
+    </view>
+    <view class="page-bd">
+        <view class="account-link">
+            <navigator url="../applyrecord/applyrecord" class="records">
+                <image class="icon" src="http://www.yueshijue.com/wechat/myrecord.png"></image>
+                <text>申请记录</text>
+                <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
+            </navigator>
+            <navigator url="../information/information">
+                <image class="icon" src="http://www.yueshijue.com/wechat/myaccount.png"></image>
+                <text>个人信息</text>
+                <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
+            </navigator>
+            <navigator url="../messagecenter/messagecenter" hidden="true">
+                <image class="icon" src="http://www.yueshijue.com/wechat/myrecord.png"></image>
+                <text>消息中心</text>
+                <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
+            </navigator>
+            <navigator url="../modifypwd/modifypwd">
+                <image class="icon" src="http://www.yueshijue.com/wechat/mybill.png"></image>
+                <text>修改密码</text>
+                <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
+            </navigator>
+            <navigator url="../commonproblem/commonproblem">
+                <image class="icon" src="http://www.yueshijue.com/wechat/myproblem.png"></image>
+                <text>常见问题</text>
+                <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
+            </navigator>
+            <navigator url="../aboutfinance/aboutfinance">
+                    <image class="icon" src="http://www.yueshijue.com/wechat/myabout.png"></image>
+                    <text>关于悦百分金融</text>
+                    <text class="version">当前版本V{{version}}</text>
+                    <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
+            </navigator>
+        </view>
+    </view>
+</view>
