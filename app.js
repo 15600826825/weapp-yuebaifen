@@ -7,6 +7,18 @@ import Md5 from 'assets/plugins/md5'
 App({
 	onLaunch() {
 		console.log('onLaunch')
+    wx.getSystemInfo({
+      success(res) {
+        console.log(res.model)
+        console.log(res.pixelRatio)
+        console.log(res.windowWidth)
+        console.log(res.windowHeight)
+        console.log(res.language)
+        console.log(res.version)
+        console.log(res.platform)
+        console.log(res.SDKVersion)
+      }
+    })
 	},
 	onShow() {
 		console.log('onShow')

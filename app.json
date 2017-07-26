@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/accountinfo/accountinfo",
     "pages/myaccount/myaccount",
     "pages/channel/channel",
     "pages/signin/signin",

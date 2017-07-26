@@ -20,11 +20,11 @@
                 <text>个人信息</text>
                 <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
             </navigator>
-            <navigator url="../messagecenter/messagecenter" hidden="true">
+           <!--  <navigator url="../messagecenter/messagecenter" hidden="true">
                 <image class="icon" src="http://www.yueshijue.com/wechat/myrecord.png"></image>
                 <text>消息中心</text>
                 <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
-            </navigator>
+            </navigator> -->
             <navigator url="../modifypwd/modifypwd">
                 <image class="icon" src="http://www.yueshijue.com/wechat/mybill.png"></image>
                 <text>修改密码</text>

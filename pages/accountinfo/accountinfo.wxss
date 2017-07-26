@@ -1,0 +1,34 @@
+.form-group	{
+	padding: 0 30rpx;
+	background: #fff
+}
+.form-item {
+	display: flex;
+	padding: 20rpx 0;
+	color: #666;
+	border-bottom: 1px solid #ededed;
+}
+.form-item:last-child {
+	border-bottom: 0;
+}
+.form-item label {
+	width: 200rpx;
+}
+.form-item input,
+.form-item picker {
+	flex: 1;
+}
+.form-item text {
+	color: #0095db;
+  font-size: 28rpx;
+}
+.form-button {
+	margin-top: 40rpx;
+	padding: 0 30rpx;
+}
+.form-button button {
+  width: 100%;
+  color: #fff;
+  font-size: 32rpx;
+  background: #3397dd;
+}

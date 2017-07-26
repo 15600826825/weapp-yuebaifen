@@ -80,9 +80,6 @@ Page({
       }
 		})
 	},
-	onPullDownRefresh () {
-    // wx.stopPullDownRefresh()
-  },
   initValidate() {
     this.WxValidate = App.WxValidate({
 			tel: {

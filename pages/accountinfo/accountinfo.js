@@ -1,0 +1,56 @@
+const App = getApp()
+Page({
+	data: {
+		user: {},
+		region: ['北京市', '广东省', '山东省', '江苏省', '河南省', '上海市', 
+		'河北省', '浙江省', '香港特别行政区', '陕西省', '湖南省', '重庆市', 
+		'福建省', '天津市', '云南省', '四川省', '广西壮族自治区', '安徽省', 
+		'海南省', '江西省', '湖北省', '山西省', '辽宁省','台湾省', '黑龙江',
+		'内蒙古自治区', '澳门特别行政区', '贵州省', '甘肃省','青海省', 
+		'新疆维吾尔自治区', '西藏区', '吉林省', '宁夏回族自治区'],
+    index: -1,
+  },
+	onLoad() {
+		let that = this
+    this.$wuxToast = App.wux(this).$wuxToast
+		wx.getStorage({
+      key: 'user',
+      success(res) {
+        that.setData({
+        	user: res.data
+        })
+      } 
+    })
+	},
+	bindDateChange: function(e) {
+    this.setData({
+      'user.birthday': e.detail.value
+    })
+  },
+	bindRegionChange(e) {
+    this.setData({
+      index: e.detail.value
+    })
+	},
+	updateGender() {
+		let that = this;
+		wx.showActionSheet({
+		  itemList: ['女', '男'],
+		  success: function(res) {
+		    console.log(res.tapIndex)
+		    console.log(that.data.user.gender)
+		    that.setData({
+		    	'user.gender': res.tapIndex
+		    })
+		    console.log(that.data.user.gender)
+		  },
+		  fail: function(res) {
+		    console.log(res.errMsg)
+		  }
+		})
+	},
+	formSubmit(e) {
+		console.log(e)
+		console.log(e.detail.value)
+	}
+})
