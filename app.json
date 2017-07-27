@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/accountinfo/accountinfo",
-    "pages/myaccount/myaccount",
-    "pages/channel/channel",
+    "pages/records/records",
     "pages/signin/signin",
+    "pages/myaccount/myaccount",
+    "pages/accountinfo/accountinfo",
+    "pages/channel/channel",
     "pages/index/index",
     "pages/signup/signup"
   ],

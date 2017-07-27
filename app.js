@@ -9,16 +9,32 @@ App({
 		console.log('onLaunch')
     wx.getSystemInfo({
       success(res) {
-        console.log(res.model)
-        console.log(res.pixelRatio)
-        console.log(res.windowWidth)
-        console.log(res.windowHeight)
-        console.log(res.language)
-        console.log(res.version)
-        console.log(res.platform)
-        console.log(res.SDKVersion)
+        // console.log(res.model)
+        // console.log(res.SDKVersion)
       }
     })
+    wx.login({
+      success(res) {
+        console.log(res)
+        if (res.code) {
+          console.log(res.code)
+          // wx.request({
+          //   url: 'https://api.weixin.qq.com/sns/jscode2session',
+          //   data: {
+          //     appid: 'wx25e37cbd2ca8fd72',
+          //     secret: 'b0e5d20d615f9c9c885687f587d2da5a',
+          //     js_code: res.code,
+          //     grant_type: 'authorization_code'
+          //   },
+          //   success(res) {
+          //     console.log(res)
+          //   }
+          // })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+      }
+    });
 	},
 	onShow() {
 		console.log('onShow')
@@ -39,6 +55,7 @@ App({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success(res) {
+        console.log(res)
         wx.hideLoading()
         if(res.data.code === 999) {
           wx.showToast({
@@ -46,7 +63,10 @@ App({
             image: '../../assets/images/iconfont-toptips.png',
             timer: 1000
           })
-          wx.redirectTo({url: '/pages/signin/signin'})
+          // wx.clearStorage()
+          setTimeout(() => {
+            wx.redirectTo({url: '/pages/signin/signin'})
+          }, 100)
         } else if(res.data.code === 0) {
       		config.success(res)
       	} else {
@@ -78,7 +98,11 @@ App({
     getRandomImage: 'user/getRandomImage.json',
     getMobileSmsCode: 'sms/getMobileSmsCode.json',
     requestRegist: 'user/registe.json',
-    getMechanismList: 'appShop/getShopMechanismInfoList.json'
+    getMechanismList: 'appShop/getShopMechanismInfoList.json',
+    getCustomerUserInfo: 'user/getCustomerUserInfo.json',
+    updateCustomerUserInfo: 'user/updateCustomerUserInfo.json',
+    getUserOrderApplyInfo: 'order/getUserOrderApplyInfo.json',
+    confirmHarvestOrder: 'order/confirmHarvestOrder.json'
   },
   Md5: Md5,
 	wux: wux, 

@@ -10,12 +10,12 @@
     </view>
     <view class="page-bd">
         <view class="account-link">
-            <navigator url="../applyrecord/applyrecord" class="records">
+            <navigator url="../records/records" class="records">
                 <image class="icon" src="http://www.yueshijue.com/wechat/myrecord.png"></image>
                 <text>申请记录</text>
                 <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
             </navigator>
-            <navigator url="../information/information">
+            <navigator url="../accountinfo/accountinfo">
                 <image class="icon" src="http://www.yueshijue.com/wechat/myaccount.png"></image>
                 <text>个人信息</text>
                 <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>

@@ -7,21 +7,21 @@
         <view class="form-group">
             <view class="form-item">
                 <label>姓名：</label>
-                <input name="name" value="{{ user.name }}"  />
+                <input name="name" value="{{ user.name }}"/>
             </view>
             <view class="form-item">
                 <label>手机号码：</label>
-                <input value="{{ user.mobile }}" />
+                <input value="{{ user.mobile }}" disabled/>
             </view>
              <view class="form-item">
                 <label>邮箱：</label>
                 <input name="email" value="{{ user.email }}" placeholder="尚未设置"/>
-                <text>修改</text>
+                <!-- <text>修改</text> -->
             </view>
              <view class="form-item">
                 <label>QQ：</label>
                 <input name="qq" value="{{ user.qq }}" placeholder="尚未设置"/>
-                <text>修改</text>
+                <!-- <text>修改</text> -->
             </view>
              <view class="form-item">
                 <label>生日：</label>
@@ -37,12 +37,12 @@
                 <input name="gender" value="{{ user.gender === 1 ? '男' : '女' }}" placeholder="尚未设置" disabled bindtap="updateGender"/>
                 <!-- <text>修改</text> -->
             </view>
-             <view class="form-item">
+            <view class="form-item">
                 <label>籍贯：</label>
                 <!-- <input name="origin" value="{{ user.origin }}" placeholder="尚未设置"/> -->
-                <picker mode="selector" name="origin" bindchange="bindRegionChange" value="{{user.origin}}" range="{{region}}">
+                <picker mode="region" name="origin" bindchange="bindRegionChange" value="{{origin}}">
                     <view class="picker">
-                      {{ region[index] || user.origin}}
+                      {{ origin[2] || user.origin}}
                     </view>
                 </picker>
                 <!-- <text>修改</text> -->
