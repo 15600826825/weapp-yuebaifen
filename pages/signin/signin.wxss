@@ -2,13 +2,25 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 100vh;
   height: 100%;
   padding: 30rpx;
   color: #fff;
   overflow: hidden;
-  background-image: url(http://www.yueshijue.com/wechat/signinbg.png);
+  background: url(http://www.yueshijue.com/wechat/signinbg.png) no-repeat center;
   background-size: cover;
+  position: relative;
+}
+.page-hd {
+	text-align: center
+}
+.signup-link {
+	position: absolute;
+	right: 20rpx;
+	padding: 10rpx;
+}
+.logo {
+	width: 320rpx;
+	height: 320rpx;
 }
 .page-bd {
 	padding-top: 80rpx;
@@ -33,34 +45,22 @@
 .submit-button {
 	padding-top: 60rpx;
 }
-.signup-link {
-	position: absolute;
-	right: 20rpx;
-	padding: 10rpx;
-}
-.logo {
-	width: 320rpx;
-	height: 320rpx;
-}
-.page-fd {
-	position: absolute;
-	bottom: 30rpx;
-	width: 100%;
-}
-.form-link {
-	width: 214px;
-	margin: auto;
-  font-size: 14px;
-}
-.form-link navigator {
-	display: inline-block;
-}
 button[type="primary"] {
     color: #00b4e7;
     background: #fff;
 }
-
 button:hover[type="primary"] {
     color: #00b4e7;
     background: #f9f9f9;
+}
+.page-fd {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	bottom: 30rpx;
+	width: calc(100% - 60rpx);
+	font-size: 28rpx;
+}
+.page-fd text {
+	padding: 0 30rpx;
 }

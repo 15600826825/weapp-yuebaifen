@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/records/records",
+    "pages/index/index",
     "pages/signin/signin",
+    "pages/records/records",
     "pages/myaccount/myaccount",
     "pages/accountinfo/accountinfo",
     "pages/channel/channel",
-    "pages/index/index",
     "pages/signup/signup"
   ],
   "window": {
