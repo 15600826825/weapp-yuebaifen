@@ -1,0 +1,58 @@
+<import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<view class="page">
+	<view class="section apply-form">
+		<view class="title">
+			<text>申请分期</text>
+		</view>
+		<view class="form-item">
+			<image class="form-item-icon" src="http://www.yueshijue.com/wechat/detail1.png"></image>
+    	<label class="form-item-label">商品金额</label>
+    	<input type="number" name="amount" class="form-item-input" value="{{ totalAmount }}" placeholder="可分期金额￥{{lowestAmount}}-{{largestAmount}}" bindinput="amountChange"/>
+    </view>
+    <view class="form-item">
+    	  <image class="form-item-icon" src="http://www.yueshijue.com/wechat/detail2.png"></image>
+    	  <label class="form-item-label">分期期数</label>
+        <text class="form-item-input" bindtap="selectStageNumber">{{ form.termNumber ? form.termNumber : '选择分期期数' }}</text>
+        <image class="arrow-right" src="http://www.yueshijue.com/wechat/detailreturn.png" bindtap="selectStageNumber"></image>
+    </view>
+	</view>
+	<view class="section cost-detail">
+		<view class="title">
+			<text>费用详情</text>
+		</view>
+		<view class="cost-detail-list">
+			<view class="detail-item">
+				<view>每期金额(元)</view>
+          <text>{{ eachTermAmount }}</text>
+			</view>
+			<view class="detail-item">
+				 <view>分期手续费(元)</view>
+            <text>0.00</text>
+			</view>
+			<view class="detail-item">
+				<view>第一期扣款(元)</view>
+        <text>{{ firstAmount }}</text>
+			</view>
+		</view>
+	</view>
+	<view class="section debit-detail">
+		  <view class="debit-item">
+          <image src="http://www.yueshijue.com/wechat/detail3.png"></image>
+          <view class="item-amount">
+              <text>{{ eachTermAmount || '---'}}</text>
+              <text>往后每期扣款(元)</text>
+          </view>
+      </view>
+      <view class="debit-item">
+          <image src="http://www.yueshijue.com/wechat/detail4.png"></image>
+          <view class="item-amount">
+              <text>{{ totalAmount || '---'}}</text>
+              <text>产品分期总额(元)</text>
+          </view>
+      </view>
+	</view>
+	<view class="submit">
+    <button formType="submit">下一步</button>
+  </view>
+</view>

@@ -19,6 +19,9 @@ Page({
 		  withShareTicket: true
 		})
 	},
+	onReachBottom () {
+		console.log('pull up')
+	},
 	touchStart(e) {
 		this.setData({
 			startX: e.touches[0].clientX,
@@ -53,47 +56,47 @@ Page({
 	},
 	scanCode() {
 		let that = this;
-		// wx.scanCode({
-		//   success: (res) => {
-		//     console.log(res)
-		//     if(res.result.indexOf('"shopUuid":') === -1) {
-		//   		that.$wuxToast.show({
-		//   			type: 'forbidden',
-  //           text: '二维码有误'
-  //         })
-  //         return false
-		//   	}
-		//     let shopUuid = JSON.parse(res.result).shopUuid;
-		//     if (shopUuid) {
-		//     	wx.setStorage({
-		// 	    	key: 'shopUuid',
-		// 	    	data: shopUuid
-		// 	    })
-		// 	    console.log(shopUuid)
-		//     	wx.navigateTo({url: '../channel/channel'})
-		//     } else {
-		//     	that.$wuxToast.show({
-  //           type: 'forbidden',
-  //           text: '二维码有误'
-  //         })
-		//     }
-		//   },
-		//   fail: (error) => {
-		//   	console.log('fail')
-		//   }
-		// })
-		wx.getLocation({
-		  type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-		  success: function(res) {
-		  	console.log(res)
-		    var latitude = res.latitude
-		    var longitude = res.longitude
-		    wx.openLocation({
-		      latitude: latitude,
-		      longitude: longitude,
-		      scale: 28
-		    })
+		wx.scanCode({
+		  success: (res) => {
+		    console.log(res)
+		    if(res.result.indexOf('"shopUuid":') === -1) {
+		  		that.$wuxToast.show({
+		  			type: 'forbidden',
+            text: '二维码有误'
+          })
+          return false
+		  	}
+		    let shopUuid = JSON.parse(res.result).shopUuid;
+		    if (shopUuid) {
+		    	wx.setStorage({
+			    	key: 'shopUuid',
+			    	data: shopUuid
+			    })
+			    console.log(shopUuid)
+		    	wx.navigateTo({url: '../channel/channel'})
+		    } else {
+		    	that.$wuxToast.show({
+            type: 'forbidden',
+            text: '二维码有误'
+          })
+		    }
+		  },
+		  fail: (error) => {
+		  	console.log('fail')
 		  }
 		})
+		// wx.getLocation({
+		//   type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+		//   success: function(res) {
+		//   	console.log(res)
+		//     var latitude = res.latitude
+		//     var longitude = res.longitude
+		//     wx.openLocation({
+		//       latitude: latitude,
+		//       longitude: longitude,
+		//       scale: 28
+		//     })
+		//   }
+		// })
 	},
 }) 

@@ -1,0 +1,132 @@
+image {
+    width: 36rpx;
+    height: 36rpx;
+}
+.title {
+    margin: 20rpx;
+}
+.title text {
+    font-size: 32rpx;
+}
+.form-item {
+    display: flex;
+    padding: 16rpx 30rpx;
+    background: #fff;
+    border-bottom: 1px solid #e5e4e4;
+}
+.input-placeholder {
+    font-family: 'Microsoft Yahei';
+    font-size: 28rpx
+}
+.form-item:first-child {
+    margin-top: 30rpx;
+}
+.form-item-icon {
+    margin: 8rpx 20rpx;
+}
+.form-item-input {
+    flex: 1;
+    color: #999;
+    text-align: right;
+    font-family: 'Microsoft Yahei';
+}
+.form-item text {
+    margin-top: 6rpx;
+}
+.arrow-right {
+    width: 20rpx;
+    height: 30rpx;
+    margin: 10rpx;
+}
+.cost-detail-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 30rpx 0 10rpx;
+    background: #fff
+}
+.detail-item {
+    text-align: center
+}
+.detail-item view {
+    padding: 4rpx 20rpx;
+    border: 1px solid #666;
+    border-radius: 10rpx;
+    color: #666;
+    background: #f3f3f3;
+    font-size: 26rpx;
+}
+.debit-detail {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30rpx;
+    padding: 0 10rpx;
+}
+.debit-item {
+    display: flex;
+    flex: 1;
+    margin: 0 20rpx;
+    padding: 10rpx;
+    background: #0095db;
+}
+.debit-item:first-child {
+    background: #00b4ea;
+}
+.debit-item:last-child {
+    background: #0095db;
+}
+.debit-item image {
+    margin: 20rpx;
+}
+.item-amount {
+    display: flex;
+    flex-direction: column;
+}
+.item-amount text {
+    color: #fff;
+    font-size: 24rpx;
+}
+.submit {
+    margin-top: 40rpx;
+    padding: 0 30rpx;
+}
+.submit button{
+    height: 90rpx;
+    line-height: 90rpx;
+    color: #fff;
+    font-size: 32rpx;
+    background: #3397dd;
+}
+.wrap{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 99;
+}
+.wrap-con{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.wrap-clist{
+    height: 88rpx;
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 88rpx;
+    color: #000;
+    background: #fff;
+    letter-spacing: 2rpx;
+    margin-bottom: 10rpx; 
+}
+.wrap-cbot{
+    margin-bottom: 0;
+}
+.viewshow{
+    display: block;
+}
+.viewhide{
+    display: none;
+}
