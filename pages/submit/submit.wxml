@@ -1,0 +1,61 @@
+<import src="../../components/toptips/toptips.wxml"/>
+<template is="toptips" data="{{ ...$wux.toptips }}"/>
+<view class="page">
+    <view class="page-header">申请分期</view>
+    <form bindsubmit="formSubmit">
+        <view class="form-group">
+            <view class="form-item">
+                <label class="form-item-label">申请金额：</label>
+                <input name="amount" class="form-item-input" value="{{ form.amount }}" disabled />
+            </view>
+            <view class="form-item">
+                <label class="form-item-label">分期期数：</label>
+                <input name="parts" class="form-item-input" value="{{ form.parts }}" disabled />
+            </view>
+        </view>
+        <view class="form-group">
+            <view class="form-item">
+                <label class="form-item-label">姓名：</label>
+                <input name="name" class="form-item-input" value="{{ form.name }}" placeholder="请与身份证保持一致"/>
+                <icon type="clear" size="15" color="#ccc" hidden="true"/>
+            </view>
+            <view class="form-item">
+                <label class="form-item-label">身份证号：</label>
+                <input name="cardNo" class="form-item-input" value="{{ form.cardNo }}" placeholder="填写有误将影响分期"/>
+                <icon type="clear" size="15" color="#ccc" hidden="true"/>
+            </view>
+            <view class="form-item">
+                <label class="form-item-label">信用卡：</label>
+                <input name="accNo" class="form-item-input" value="{{ form.accNo }}" placeholder="请与身份证保持一致"/>
+                <icon type="clear" size="15" color="#ccc" hidden="true"/>
+            </view>
+            <view class="form-item">
+                <label class="form-item-label">卡片有效期：</label>
+                <picker mode="date" value="{{date}}" start="2018-09-01" fields="month" class="form-item-input" bindchange="bindDateChange">
+                  <view class="picker">
+                    {{ date || '2020-08'}}
+                  </view>
+                </picker>
+            </view>
+            <view class="form-item">
+                <label class="form-item-label">cvn2码：</label>
+                <input name="cvn" class="form-item-input" value="{{form.cvn}}" placeholder="请输入卡片背面最后三位数字" maxlength="3"/>
+                <icon type="clear" size="18" color="rgba(0,0,0,.3)" hidden="true"/>
+            </view>
+            <view class="form-item">
+                <label class="form-item-label" style="width: 240rpx">银行预留手机号：</label>
+                <input name="reserveMobile" class="form-item-input" vlaue="{{ form.reserveMobile }}" placeholder="请输入银行预留手机号"/>
+                <icon type="clear" size="15" color="#ccc" hidden="true"/>
+            </view>
+        </view>
+        <view class="form-item-agree">
+            <checkbox-group name="agree" class="form-item-check">
+                <checkbox value="agree" checked="{{ form.agree }}"/>同意
+                <navigator url="../contract/contract">《个人消费分期支付合同》</navigator>
+            </checkbox-group>
+        </view>
+        <view class="form-item-submit">
+            <button formType="submit">确认分期</button>
+        </view>
+    </form>
+</view>

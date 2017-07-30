@@ -35,14 +35,23 @@ Page({
         	method: 'POST',
         	data: {
         		shopUuid: shopUuid,
-            customerSessionId: sessionId
+                customerSessionId: sessionId
         	},
         	success(res) {
-        		console.log(res)
-        		that.setData({
-        			mechanismInfoList: res.data.result.shopMechanismInfoVoList,
-        			shopData: res.data.result.shopData
-        		})
+        	    console.log(res)
+                let result = res.data.result;
+                wx.setStorage({
+                  key: 'shopId',
+                  data: result.shopData.shopId
+                })
+                wx.setStorage({
+                  key: 'shopName',
+                  data: result.shopData.shopName
+                })
+                that.setData({
+                  mechanismInfoList: result.shopMechanismInfoVoList,
+                  shopData: result.shopData
+                })
         	}
         })
 	},
@@ -63,6 +72,6 @@ Page({
           key: 'largestAmount',
           data: largestAmount
         })
-        // wx.navigateTo({url: '../detail/detail'})
+        wx.navigateTo({url: '../detail/detail'})
 	}
 })

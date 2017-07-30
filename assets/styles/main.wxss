@@ -87,3 +87,26 @@ text {
     background-color: transparent;
     opacity: 1
 }
+.form-group {
+    padding: 0 30rpx;
+    margin-bottom: 20rpx;
+    background: #fff
+}
+.form-item {
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx 10rpx 10rpx;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+    font-size: 28rpx;
+}
+.form-item:last-child {
+    border-bottom: 0;
+}
+.form-item-label {
+    width: 180rpx;
+    line-height: 2
+}
+.form-item-input {
+    flex: 1;
+}

@@ -1,0 +1,29 @@
+.page-header {
+    padding: 16rpx 0;
+    margin-bottom: 20rpx;
+    text-align: center;
+    font-size: 30rxp;
+    color: #666;
+    background: #fff;
+    border-bottom: 1px solid #ededed;
+}
+.form-item-agree,
+.form-item-submit {
+    margin-top: 30rpx;
+    padding: 0  30rpx;
+}
+.form-item-check {
+    display: flex;
+}
+.form-item-agree navigator {
+    color: #34c1ea;
+}
+.form-item-submit button {
+    color: #fff;
+    font-size: 32rpx;
+    background: #3397dd;
+}
+.picker {
+    height:36rpx;
+    margin-top: 6rpx;
+}

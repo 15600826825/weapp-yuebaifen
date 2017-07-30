@@ -8,7 +8,7 @@
 		<view class="form-item">
 			<image class="form-item-icon" src="http://www.yueshijue.com/wechat/detail1.png"></image>
     	<label class="form-item-label">商品金额</label>
-    	<input type="number" name="amount" class="form-item-input" value="{{ totalAmount }}" placeholder="可分期金额￥{{lowestAmount}}-{{largestAmount}}" bindinput="amountChange"/>
+    	<input type="number" name="amount" class="form-item-input" value="{{ form.totalAmount }}" placeholder="可分期金额￥{{lowestAmount}}-{{largestAmount}}" bindinput="amountChange"/>
     </view>
     <view class="form-item">
     	  <image class="form-item-icon" src="http://www.yueshijue.com/wechat/detail2.png"></image>
@@ -32,7 +32,7 @@
 			</view>
 			<view class="detail-item">
 				<view>第一期扣款(元)</view>
-        <text>{{ firstAmount }}</text>
+        <text>{{ firstAmount || eachTermAmount }}</text>
 			</view>
 		</view>
 	</view>
@@ -53,6 +53,6 @@
       </view>
 	</view>
 	<view class="submit">
-    <button formType="submit">下一步</button>
+    <button bindtap="submit">下一步</button>
   </view>
 </view>

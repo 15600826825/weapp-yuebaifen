@@ -102,7 +102,10 @@ App({
       fail(error) {
 				console.log('error')
 				console.log(error)
-			}
+			},
+      complete() {
+        wx.hideLoading()
+      }
     })
 	},
 	globalData: {
@@ -119,7 +122,9 @@ App({
     getCustomerUserInfo: 'user/getCustomerUserInfo.json',
     updateCustomerUserInfo: 'user/updateCustomerUserInfo.json',
     getUserOrderApplyInfo: 'order/getUserOrderApplyInfo.json',
-    confirmHarvestOrder: 'order/confirmHarvestOrder.json'
+    confirmHarvestOrder: 'order/confirmHarvestOrder.json',
+    getOrderPartList: 'order/partList.json',
+    createOrder: 'order/createOrder.json'
   },
   Md5: Md5,
 	wux: wux, 
