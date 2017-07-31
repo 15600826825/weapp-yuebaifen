@@ -1,0 +1,6 @@
+.form-item-tip {
+    margin-top: 20rpx;
+    padding: 0 30rpx;
+    color: #c4c4c4;
+    font-size: 26rpx;
+}

@@ -1,0 +1,26 @@
+<import src="../../components/toptips/toptips.wxml"/>
+<template is="toptips" data="{{ ...$wux.toptips }}"/>
+<view class="page">
+    <form bindsubmit="formSubmit">
+        <view class="form-group">
+            <view class="form-item">
+                <label class="form-item-label">原密码：</label>
+                <input name="oldPassword" type="password" class="form-item-input" value="{{ form.oldPassword }}" placeholder="请输入原密码"/>
+            </view>
+             <view class="form-item">
+                <label class="form-item-label">新密码：</label>
+                <input name="newPassword" type="password" class="form-item-input" value="{{ form.newPassword }}" placeholder="请输入新密码"/>
+            </view>
+            <view class="form-item">
+                <label class="form-item-label">确认密码：</label>
+                <input name="confirmPass" type="password" class="form-item-input" value="{{ form.confirmPass }}" placeholder="请确认新密码"/>
+            </view>
+        </view>
+        <view class="form-item-tip">
+            <text>密码6-20位，只能是字母和数字的组合</text>
+        </view>
+        <view class="form-item-submit">
+            <button formType="submit">确 定</button>
+        </view>
+    </form>
+</view>

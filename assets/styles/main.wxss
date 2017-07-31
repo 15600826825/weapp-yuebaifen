@@ -18,66 +18,6 @@ navigator {
 text {
     font-size: 28rpx
 }
-/*.page__hd {
-    padding: 40px;
-}
-
-.page__bd {
-    padding-bottom: 40px;
-}
-
-.page__bd_spacing {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.page__ft{
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-.page__title {
-    text-align: left;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.page__desc {
-    margin-top: 5px;
-    color: #888888;
-    text-align: left;
-    font-size: 14px;
-}
-
-.button-sp-area {
-    margin: 20px auto 0;
-    width: 80%;
-    text-align: center;
-}
-
-.ezpop {
-    position: relative;
-    z-index: 1010;
-    margin-bottom: 50px;
-}*/
-.pull-right {
-    float: right;
-}
-
-.pull-left {
-    float: left;
-}
-.text-center {
-    text-align: center;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.text-right {
-    text-align: right
-}
 
 .input-placeholder {
     color: #d1d1d1;
@@ -109,4 +49,13 @@ text {
 }
 .form-item-input {
     flex: 1;
+}
+.form-item-submit {
+    padding: 30rpx;
+}
+.form-item-submit button{
+    padding-top: 10rpx;
+    color: #fff;
+    font-size: 32rpx;
+    background: #3397dd;
 }

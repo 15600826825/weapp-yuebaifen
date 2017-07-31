@@ -25,7 +25,7 @@
                 <text>消息中心</text>
                 <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
             </navigator> -->
-            <navigator url="../modifypwd/modifypwd">
+            <navigator url="../modifypass/modifypass">
                 <image class="icon" src="http://www.yueshijue.com/wechat/mybill.png"></image>
                 <text>修改密码</text>
                 <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>

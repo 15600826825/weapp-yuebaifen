@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/myaccount/myaccount",
+    "pages/modifypass/modifypass",
+    "pages/index/index",
     "pages/signin/signin",
     "pages/submit/submit",
     "pages/detail/detail",
-    "pages/index/index",
     "pages/records/records",
-    "pages/myaccount/myaccount",
     "pages/accountinfo/accountinfo",
     "pages/channel/channel",
     "pages/signup/signup"

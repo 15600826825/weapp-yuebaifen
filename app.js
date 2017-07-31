@@ -124,7 +124,8 @@ App({
     getUserOrderApplyInfo: 'order/getUserOrderApplyInfo.json',
     confirmHarvestOrder: 'order/confirmHarvestOrder.json',
     getOrderPartList: 'order/partList.json',
-    createOrder: 'order/createOrder.json'
+    createOrder: 'order/createOrder.json',
+    modifyPassword: 'user/modifyPassword.json'
   },
   Md5: Md5,
 	wux: wux, 
