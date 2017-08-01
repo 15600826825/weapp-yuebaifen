@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/question/question",
+    "pages/answer/answer",
     "pages/myaccount/myaccount",
     "pages/modifypass/modifypass",
     "pages/index/index",
@@ -10,6 +12,7 @@
     "pages/accountinfo/accountinfo",
     "pages/channel/channel",
     "pages/signup/signup"
+
   ],
   "window": {
     "backgroundColor": "#f4f4f4",

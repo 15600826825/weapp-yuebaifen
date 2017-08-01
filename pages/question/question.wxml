@@ -1,0 +1,7 @@
+<view class="page">
+    <view class="question-list">
+        <view wx:for="{{faqList}}" wx:key="{{index}}" data-index="{{index}}" bindtap="handleTap">
+            <text>{{item.question}}</text>
+        </view>
+    </view>
+</view>

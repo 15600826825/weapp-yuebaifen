@@ -30,12 +30,12 @@
                 <text>修改密码</text>
                 <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
             </navigator>
-            <navigator url="../commonproblem/commonproblem">
+            <navigator url="../problem/problem">
                 <image class="icon" src="http://www.yueshijue.com/wechat/myproblem.png"></image>
                 <text>常见问题</text>
                 <image class="icon-right" src="http://www.yueshijue.com/wechat/myreturn.png"></image>
             </navigator>
-            <navigator url="../aboutfinance/aboutfinance">
+            <navigator url="../about/about">
                     <image class="icon" src="http://www.yueshijue.com/wechat/myabout.png"></image>
                     <text>关于悦百分金融</text>
                     <text class="version">当前版本V{{version}}</text>

@@ -1,0 +1,11 @@
+.question-list {
+  background: #fff;
+}
+.question-list view {
+	padding: 16rpx 30rpx;
+  border-bottom: 1px solid #e5e5e5; 
+}
+.question-list view text {
+	font-size: 30rpx;
+	color: #0c0c0c;
+}
