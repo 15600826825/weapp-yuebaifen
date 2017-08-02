@@ -1,0 +1,41 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center
+}
+.page-hd {
+    padding-top: 60rpx
+}
+.page-hd image {
+    width: 144rpx;
+    height: 144rpx;
+}
+.page-hd text {
+    display: block;
+    color: #01adea;
+    font-weight: bold;
+}
+.page-bd {
+    margin-top: -60rpx;
+}
+.page-bd text {
+    padding: 16rpx;
+    color: #0096da;
+    font-size: 30rpx;
+    border-radius: 40rpx;
+    border: 1px solid #5bc6fe;
+}
+.page-ft {
+    padding-bottom: 30rpx;
+}
+.page-ft text{
+    display: block;
+    color: #3c3c3c; 
+    font-size: 30rpx;
+    letter-spacing: 4rpx;
+}
+.page-ft text:first-child {
+    font-size: 26rpx;
+}

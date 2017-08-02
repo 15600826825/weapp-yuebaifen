@@ -1,0 +1,13 @@
+<view class="page">
+    <view class="page-hd">
+        <image src="http://www.yueshijue.com/wechat/aboutlogo.png"></image>
+        <text>V {{version}} 版</text>
+    </view>
+    <view class="page-bd">
+    	<text bindtap="call" data-phone="{{phone}}">客服电话：{{phone}}</text>
+    </view>
+    <view class="page-ft">
+        <text>悦享分期 分你所想</text>
+        <text>悦百分  版权所有</text>
+    </view>
+</view>

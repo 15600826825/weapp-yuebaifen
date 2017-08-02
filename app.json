@@ -1,18 +1,18 @@
 {
   "pages": [
+    "pages/signin/signin",
+    "pages/index/index",
+    "pages/myaccount/myaccount",
+    "pages/about/about",
     "pages/question/question",
     "pages/answer/answer",
-    "pages/myaccount/myaccount",
     "pages/modifypass/modifypass",
-    "pages/index/index",
-    "pages/signin/signin",
     "pages/submit/submit",
     "pages/detail/detail",
     "pages/records/records",
     "pages/accountinfo/accountinfo",
     "pages/channel/channel",
     "pages/signup/signup"
-
   ],
   "window": {
     "backgroundColor": "#f4f4f4",
