@@ -59,3 +59,8 @@ text {
     font-size: 32rpx;
     background: #3397dd;
 }
+.random-img {
+    width: 160rpx;
+    height: 60rpx;
+    vertical-align: middle
+}

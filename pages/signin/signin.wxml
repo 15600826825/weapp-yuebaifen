@@ -23,7 +23,7 @@
 		  </form>
     </view>
     <view class="page-fd">
-	    	<navigator url="../index/index">找回密码</navigator> 
+	    	<navigator url="../resetpass/resetpass">找回密码</navigator> 
 	      <text>|</text>
 	      <navigator url="../index/index">短信验证码登录》</navigator>
     </view>

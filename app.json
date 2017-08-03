@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/resetpass/resetpass",
     "pages/signin/signin",
     "pages/index/index",
     "pages/myaccount/myaccount",

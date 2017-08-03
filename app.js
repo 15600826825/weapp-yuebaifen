@@ -73,12 +73,11 @@ App({
       },
       success(res) {
         console.log(res)
-        wx.hideLoading()
         if(res.data.code === 999) {
           wx.showToast({
             title: res.data.message,
             image: '../../assets/images/iconfont-toptips.png',
-            timer: 1000
+            duration: 1000
           })
           // wx.clearStorage()
           setTimeout(() => {
@@ -87,15 +86,14 @@ App({
         } else if(res.data.code === 0) {
       		config.success(res)
       	} else {
-          console.log(res)
       		wx.showToast({
             title: res.data.message,
           	image: '../../assets/images/iconfont-toptips.png',
-            timer: 1000
+            duration: 1000
           })
-          setTimeout(() => {
-            config.other && config.other()
-          }, 1000)
+          // setTimeout(() => {
+          //   config.other && config.other()
+          // }, 1000)
           // wx.redirectTo({url: '/pages/index/index'})
       	}
       },
